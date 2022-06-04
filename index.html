@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soja Supply Chain Dapp</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">Soja Supply Chain Dapp</h1>
+        <hr>
+        <p style="text-align: center;">Système de chaine d'approvisionnement décentralisé, ESI, SIL 1.</p>
+    </div>
+
+    <div id="ftc-harvest">
+        <h2>Tracer un Produit</h2>
+        <div class="form-group">
+            ID
+            <br>
+            <input class="input-field" type="number" id="id" name="id" value=1><br>
+            GTIN
+            <br>
+            <input type="number" id="gtin" name="gtin" value=1><br>
+            Current Owner ID
+            <br>
+            <input type="text" id="ownerID" name="ownerID" value="0x247dfD5Caa1b43fD250BC5a7c1ca7AA981E04D0a" size="50"><br>
+            <div class=button-div>
+                <button class="btn-fetchOne" id="button" type="button" data-id="9">Fetch Source</button>
+                <button class="btn-fetchTwo" id="button" type="button" data-id="10">Fetch Destination</button>
+            </div>
+        </div>
+        <div class=form-break></div>
+        <h2>Matière Première</h2>
+        <div class="form-group">
+            Farmer ID
+            <br>
+            <input type="text" id="originFarmerID" name="originFarmerID" value="0x31b0A166D85A16C1f09076966669d1D4eDaE76E4"
+                size="50"><br>
+            Farm Name
+            <br>
+            <input type="text" id="originFarmName" name="originFarmName" value="Metidja"><br>
+            Farm Information
+            <br>
+            <input type="text" id="originFarmInformation" name="originFarmInformation" value="5 rue Colonel Amirouche, Alger"><br>
+            Farm Latitude
+            <br>
+            <input type="text" id="originWeight" name="originWeight" value="10"><br>
+            Farm Longitude
+            <br>
+            <input type="text" id="originDesignation" name="originDesignation" value="10"><br>
+            <br>
+            <button class="btn-harvest" id="button" type="button" data-id="1">Harvest</button>
+            <button class="btn-process" id="button" type="button" data-id="2">Process</button>
+            <button class="btn-pack" id="button" type="button" data-id="3">Pack</button>
+            <button class="btn-forsale" id="button" type="button" data-id="4">ForSale</button>
+        </div>
+        <div class=form-break></div>
+        <h2>Produit Finale</h2>
+        <div class="form-group">
+            Product Name
+            <br>
+            <input type="text" id="productName" name="productName" value="Best soja for familly" size="60"><br>
+            Product Price
+            <br>
+            <input type="number" id="productPrice" name="productPrice" value=1>ETH<br>
+            Distributor ID
+            <br>
+            <input type="text" id="distributorID" name="distributorID" value="0x80918761DCfB83aF8578333AC62CADd52cAb96A5"
+                size="50">
+            <br>
+            Retailer ID
+            <br>
+            <input type="text" id="retailerID" name="retailerID" value="0xbBa5FE9bEc5eb476CFEA889Da951e9f83D1aa2a8"
+                size="50"><br>
+            Consumer ID
+            <br>
+            <input type="text" id="consumerID" name="consumerID" value="0x24DD4F9dBcEA7be7D89907733B8d3106b32ce5Fa"
+                size="50"><br>
+            <br>
+            <button class="btn-buy" id="button" type="button" data-id="5">Buy</button>
+            <button class="btn-ship" id="button" type="button" data-id="6">Ship</button>
+            <button class="btn-receive" id="button" type="button" data-id="7">Receive</button>
+            <button class="btn-purchase" id="button" type="button" data-id="8">Purchase</button>
+        </div>
+        <div class=form-break></div>
+        <hr>
+    </div>
+
+    <h2>Transaction History<span id="ftc-history"></span></h2>
+    <div>
+        <ul id="ftc-events">
+            <!-- Events will appear here from app.js -->
+        </ul>
+        <br>
+        <hr>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@0.20.6/dist/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
